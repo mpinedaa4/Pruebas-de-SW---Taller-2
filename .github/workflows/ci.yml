@@ -1,9 +1,5 @@
 name: CI-Pipeline
 
-# Permisos para que github-actions[bot] pueda hacer push a gh-pages
-permissions:
-  contents: write
-
 on:
   push:
     branches: [ "main" ]
@@ -29,6 +25,6 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      # 4. Pruebas unitarias
+      # 4. Pruebas
       - name: Run tests
         run: pytest test_integration_with_fake.py -v
